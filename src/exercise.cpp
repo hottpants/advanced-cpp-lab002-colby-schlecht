@@ -92,27 +92,48 @@ std::string reverse_string(const std::string& text) {
 // Exercise 9: count vowels in a string
 int count_vowels(const std::string& text) {
     // TODO: Add code to count vowels.
-
-    return 1;
+    int count = 0;
+    for(char c : text) {
+        std::tolower(c);
+        if(c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
+            count++;
+        }
+    }
+    return count;
 }
 
 // Exercise 10: determine whether a number is prime
 bool is_prime(int n) {
     // Add code
-
+    for(int i = 2; 2*i <= n; i++) { // I only have to check the first half of numbers adding up to the target number
+        if(n%i == 0) {
+            return false;
+        }
+    }
     return true;
 }
 
 // Exercise 11: power function
 int power(int base, int exponent) {
     // TODO: Add code to compute base^exponent.
-
-    return 1;
+    int total = base;
+    for (int i = 1; i < exponent; i++) {
+        total = total*base;
+    }
+    return total;
 }
 
 // Exercise 12: nth Fibonacci number
 int fibonacci(int n) {
     // TODO: Add code to compute the nth Fibonacci number.
-
-    return 1;
+    int nextN = 1;
+    int prevN = 0;
+    int temp;
+    for(int i = 0; i < n; i++) {
+        temp = nextN;
+        nextN = nextN + prevN;
+        prevN = temp;
+        n = nextN;
+    }
+    return n;
 }
