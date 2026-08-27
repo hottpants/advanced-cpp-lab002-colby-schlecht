@@ -129,11 +129,13 @@ int fibonacci(int n) {
     int nextN = 1;
     int prevN = 0;
     int temp;
+    
     for(int i = 0; i < n; i++) {
         temp = nextN;
+        std::cout << nextN << std::endl;
+        //std::cout << prevN << std::endl;
         nextN = nextN + prevN;
         prevN = temp;
-        n = nextN;
     }
-    return n;
+    return prevN;
 }
