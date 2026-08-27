@@ -6,7 +6,9 @@
 // Exercise 1: sum all values from 1 to 100
 int sum_1_to_100() {
     int sum = 0;
-
+    for (int i = 1; i <= 100; ++i) {
+        sum += i;
+    }
     return sum;
 }
 
@@ -14,7 +16,10 @@ int sum_1_to_100() {
 int factorial(int n) {
     // TODO: Add the code to compute factorial.
     int result = 1;
-
+    for (int i = n; i > 0; i--) {
+        result *= i;
+    }
+    
     return result;
 }
 
