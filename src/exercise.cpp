@@ -2,6 +2,7 @@
 #include <algorithm>
 #include <cctype>
 #include <string>
+#include <iostream>
 
 // Exercise 1: sum all values from 1 to 100
 int sum_1_to_100() {
@@ -26,42 +27,66 @@ int factorial(int n) {
 // Exercise 3: check if a number is even
 bool is_even(int value) {
     // TODO: Add code to return true if value is even.
-
+    if (value%2 == 0) {
+        return true;
+    }
+    else {
+        return false;
+    }
     return 0;
 }
 
 // Exercise 4: maximum value in an array
 int max_value(const int arr[], int size) {
     // TODO: Add code to find the maximum value.
-
-    return 1;
+    int max = arr[0];
+    for (int i = 0; i < size; i++) {
+        if (max < arr[i]) {
+            max = arr[i];
+        }
+    }
+    return max;
 }
 
 // Exercise 5: minimum value in an array
 int min_value(const int arr[], int size) {
     // TODO: Add code to find the minimum value.
-
-    return 0;
+    int min = arr[0];
+    for (int i = 0; i < size; i++) {
+        if (min > arr[i]) {
+            min = arr[i];
+        }
+    }
+    return min;
 }
 
 // Exercise 6: average of array values
 double average_of_array(const int arr[], int size) {
     // TODO: Add code to compute the average.
+    double sum = 0;
+    for (int i = 0; i < size; i++) {
+        sum += arr[i];
+    }
 
-    return 1.0;
+    return sum/double(size);
 }
 
 // Exercise 7: sum of digits in an integer
 int sum_of_digits(int n) {
     // TODO: Add code to add all digits in n.
-
-    return 1;
+    int sum = 0;
+    while (n != 0) {
+        sum += n%10;
+        n /= 10;
+    }
+    return sum;
 }
 
 // Exercise 8: reverse a string
 std::string reverse_string(const std::string& text) {
-
-    return "reverse";
+    std::string reversedText = text;
+    reverse(reversedText.begin(), reversedText.end());
+    return reversedText;
 }
 
 // Exercise 9: count vowels in a string
